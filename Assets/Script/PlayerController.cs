@@ -1,0 +1,35 @@
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    private Rigidbody playerRb;
+    //float is for desimile numbers
+    public float jumpForce = 10;
+    public float gravityModifier;
+    //bool is a variable which is either true or false
+    public bool isOnGround = true;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        playerRb = GetComponent<Rigidbody>();
+        Physics.gravity *= gravityModifier;
+        
+       
+    }
+
+    // Update is called once per frame
+    void Update()
+    {   //input for spacebar
+        //&& = and
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround= false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        isOnGround = true;
+    }
+}
