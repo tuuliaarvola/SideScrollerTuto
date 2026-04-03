@@ -6,9 +6,12 @@ public class SpawnManager : MonoBehaviour
     private Vector3 spawnPosition = new Vector3(25, 0, 0);
     private float startDelay = 2;
     private float repeatRate = 2;
+    private PlayerController playerControllerScript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         //for constantly calling SpawnObstacle
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
     }
@@ -21,7 +24,11 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle ()
     {
-        //for making clones of the obstacle
-        Instantiate(obstaclePrefab, spawnPosition, obstaclePrefab.transform.rotation);
+        if(playerControllerScript.gameOver == false)
+        {
+            //for making clones of the obstacle
+            Instantiate(obstaclePrefab, spawnPosition, obstaclePrefab.transform.rotation);
+        }
+    
     }
 }
