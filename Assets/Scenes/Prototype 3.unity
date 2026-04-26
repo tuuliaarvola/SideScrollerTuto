@@ -271,6 +271,7 @@ MonoBehaviour:
   gravityModifier: 1.7
   isOnGround: 1
   gameOver: 0
+  gameOverScreen: {fileID: 1750244110}
 --- !u!65 &298968321
 BoxCollider:
   m_ObjectHideFlags: 0

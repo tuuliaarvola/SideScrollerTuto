@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     //bool is a variable which is either true or false
     public bool isOnGround = true;
     public bool gameOver;
+    public GameObject gameOverScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -61,6 +62,7 @@ public class PlayerController : MonoBehaviour
             explosionParticle.Play();
             dirtParticle.Stop();
             playerAudio.PlayOneShot(crashSound, 1.0f);
+            gameOverScreen.gameObject.SetActive(true);
         }
     }
 }
