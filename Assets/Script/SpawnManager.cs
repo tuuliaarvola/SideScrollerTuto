@@ -28,6 +28,7 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnObstacle ()
     {
+        //stops making clones if game is over
         if(playerControllerScript.gameOver == false)
         {
             //for making clones of the obstacle

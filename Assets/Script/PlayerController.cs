@@ -24,8 +24,6 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
-        
-       
     }
 
     // Update is called once per frame
@@ -55,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         else if(collision.gameObject.CompareTag("Obstacle"))
         {
+            //these happen if game is over
             Debug.Log("Game Over");
             gameOver = true;
             playerAnim.SetBool("Death_b", true);
