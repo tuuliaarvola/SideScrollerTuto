@@ -1160,7 +1160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   obstaclePrefab: {fileID: 3234460549776422498, guid: 85e9e1c41e33ad6499f3fa564b4ad726, type: 3}
-  titleScreen: {fileID: 0}
 --- !u!4 &1313212801
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,7 +1307,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play Again
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1845,6 +1844,10 @@ PrefabInstance:
     - target: {fileID: 2581666548228937404, guid: 45e1ca3071a78374ea1436f22a58c321, type: 3}
       propertyPath: m_Name
       value: Title Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581666548228937404, guid: 45e1ca3071a78374ea1436f22a58c321, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5371684316335283296, guid: 45e1ca3071a78374ea1436f22a58c321, type: 3}
       propertyPath: m_Enabled

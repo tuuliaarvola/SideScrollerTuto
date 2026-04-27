@@ -16,11 +16,12 @@ public class MoveLeft : MonoBehaviour
     void Update()
     {
         // == equal to, only one = would mean setting the fariable as false
+        //stops moving obstacle/bg if game is over
         if (playerControllerScript.gameOver == false)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed);
         }
-
+        //destroys obstacle when it´s out of bounds
         if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
